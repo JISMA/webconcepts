@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <style >
+            img {
+                display: block('img1');
+            }
+            
+        img {
+            display: none('img1');
+        }
+        </style>
+    </head>
+    <body>
+        <script>
+            function img(){
+                console.log(document.getElementById('img1').src)
+                
+            }
+            </script>
+        <img id="img1" src="../images/img1.jpg" onclick="img()" alt="">
+        
+    </body>
+
+</html>

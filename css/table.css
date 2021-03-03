@@ -1,0 +1,18 @@
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+
+.header{
+    background-color: red;
+}
+
+.header:hover{
+    background-color: grey;
+}
+.rows:nth-child(odd){
+    background-color: green;
+}
+.rows:hover:nth-child(odd){
+    background-color: cyan;
+}

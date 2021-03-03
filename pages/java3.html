@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head> 
+
+</head>
+<style >
+    
+</style>
+    <body>
+<!--<button onclick="setData()">click</button>-->
+<p id= para1> </p>
+<p id="para2">Welcome</p>
+<script>
+    //function setData(){
+        //document.getElementById("para1").innerText="Hey all Welcome"
+//document.getElementById("para1").innerHTML="Hey all <div>Welcome </div>"
+//document.getElementById("para2").style.color="red"
+//document.getElementById("para2").style.fontWeight="bold"
+//document.getElementById("para2").onmouseenter=alert("hello") }
+
+function change(){
+    
+    console.log(document.getElementById('img1').src)//get the actual path frm here
+    // check if the image loaded is image 1 by double equal to
+    if (document.getElementById('img1').src=="file:///D:/jisma/images/img1.jpg"){ 
+        //if condition true load second image to that loacation
+        document.getElementById('img1').src="file:///D:/jisma/images/img2.jpg"
+    }
+    // or else load the first image to the place of second image
+    else
+    {
+        document.getElementById('img1').src="file:///D:/jisma/images/img1.jpg"
+    }
+   
+   
+}
+   
+
+</script>
+<!--u can add image directy-->
+<img id="img1" src="../images/img1.jpg" onclick="change()" alt="">
+
+</body>
+</html>
