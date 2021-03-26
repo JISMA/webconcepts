@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <title>Document</title>
+    <br>
+    <br>
+    <body>
+<div class="row">
+    <h1>To Do List</h1>
+    <div class="col-sm-6" >
+            <input id="list" name="items list" placeholder="enter ur item list here" type ="text"><br>
+            <br>      
+    </div>
+    <button onclick="NewArry()">Enter</button>
+    <p id="demo"></p>
+</div>
+<ul id='newlist'>       
+</ul>
+    <script>
+        var todolist=[]
+        function NewArry(){
+            a=document.getElementById("list").value
+            todolist.push(a)
+           console.log(todolist)
+           for(a of todolist) {
+               console.log(a)
+           } 
+        let s=""
+    for (a of todolist){
+        s+="<li>"+a+"</li>"
+        }
+   document.getElementById('newlist').innerHTML=s
+   function Add(){
+       
+   }
+   
+    }
+    </script>
+    <input type =text value="submit" id="t1">
+    <input type=button id="submit" onclick="Add()";>
+   
+   <div id='newlist'>
+</div>
+   </body>
+
+</html>

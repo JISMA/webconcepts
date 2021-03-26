@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="username">
+    <button onclick="checkusr()">Check</button>
+
+    <script>
+        function checkusr() {
+            let username = document.getElementById('username').value
+            //let regexp=/[a-z]{2}/g
+            //let regexp=/^987\d{7}/
+            //we can write in two grops
+            //let regexp=/^(987|789)\d{7}/
+            //begin alphabet or num or special character + @ + gmail.com or yahoo.com end
+            //let regexp=/^\w+\W*@(gmail.com|yahoo.com)$/g
+
+            let regexp = /^\+91\s(987)\d{7}$/g
+            alert(username.match(regexp))
+
+            if (regexp.test(username)) {
+                alert("Valid mobile nomber")
+            }
+            else {
+                alert("Invalid mobilenum")
+            }
+        }
+
+        function NewFunction() {
+            let input = "My mobile number is 9895360149 and office number is (0484)-2523664 and fax no is [0484] 2526443"
+            let num = /\(\d{4}\)-\d{7}|\d{10}|\[\d{4}\]\s\d{7}/gi
+            let result = input.match(num)
+            document.getElementById("demo").innerHTML = result;
+       }
+    </script>
+    <button onclick="NewFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+</body>
+
+</html>

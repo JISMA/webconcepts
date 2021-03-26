@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       function AccountHolder(name,accntnum,balance){
+           this.Name=name
+           this.AccntNum=accntnum
+           this.Balance =balance
+
+           this.show=function(){
+            console.log(`Name ${this.Name}`)
+            console.log(`AccntNum ${this.AccntNum}`)
+            console.log(`Balance ${this.Balance}`)
+           }
+           this.depbal=function(amount){
+               this.Balance+=amount
+               console.log("Balance after deposit :",this.Balance)
+           }
+           this.witbal=function(amount){
+            if (amount>this.Balance){
+                console.log("Insufficient Balance")
+            }
+            else{
+                this.Balance-=amount
+                console.log("Balance after withdrawal is:",this.Balance)
+            }
+           }
+        }
+           let Accntholder1=new AccountHolder("Sam",121,2000)
+    Accntholder1.show()
+    Accntholder1.depbal(250)
+    Accntholder1.witbal(500)
+
+   </script>
+</body>
+</html>

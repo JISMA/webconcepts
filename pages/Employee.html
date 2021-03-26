@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="col-sm-6">
+
+        <label for="Employee id">Employee Id:</label><br>
+        <input type="text" id="id" name="empid"><br>
+        <br>
+        <label for="Employee name">Employee Name:</label><br>
+        <input type="text" id="name" name="empname"><br>
+        <br>
+        <label for="Employee department">Department :</label><br>
+        <select id="department">
+            <option>Production</option>
+            <option>Testing</option>
+            <option>Development</option>
+        </select>
+        <br>
+        <br>
+        <label for="Employee salary">Employee Salary:</label><br>
+        <input type="text" id="salary" name="empsalary"><br>
+        <br>
+        <input type=button value='Add' onClick='NewList()' ;>
+        <br>
+
+
+        <script>
+            function EmployeeDetails(EId, EName, EDepartmnt, ESalary) {
+                this.EId = id
+                this.EName = name
+                this.EDepartmnt = department
+                this.ESalary = salary
+            }
+            var EmployeeRecords = new Array()
+            function NewList() {
+                id = document.getElementById("id").value
+                name = document.getElementById("name").value
+                department = document.getElementById("department").value
+                salary = document.getElementById("salary").value
+                let obj = new EmployeeDetails(id, name, department, salary)
+                console.log(obj)
+                EmployeeRecords.push(obj)
+                console.log(EmployeeRecords)
+
+                let l = localStorage.length
+                let E = JSON.stringify(EmployeeRecords)
+
+                if (l == 0) {
+                    localStorage.setItem("0", E)
+                    
+                }
+                else {
+
+                    localStorage.setItem(l.toString(), E)
+                   
+                }
+               
+
+            }
+        </script>
+</body>
+
+</html>

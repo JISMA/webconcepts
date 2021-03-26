@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    </head>
+    <body>
+
+<h1>Document</h1>
+<h2>New Array</h2>
+
+<script>
+    let names=["A","B","C","D","E","F","G","H"]
+    names.splice(3)
+    console.log(names)
+    names.splice(3,1)
+    console.log(names)
+    names.splice(3,1,"Q")
+    console.log(names)
+    sub_ary=names.slice(2,5)
+    console.log(sub_ary)
+    console.log(names.indexOf("A"))
+    console.log(names.indexOf("F"))
+    names.reverse()
+    console.log(names)
+    // conventional arrays using for loop
+    for(let i=0;i<names.length;i++){
+        console.log(names[i])
+    }
+    // for each loop
+    console.log("****************")
+    for(let name of names){
+        console.log(name)
+    }
+    //also use in instead of for loop
+    console.log("****************")
+    for (let index in names){
+        console.log(index)
+        console.log(names[index])
+    }
+    </script>
+  <!--to create a new aray using ul and for loop-->
+    <ul id='mylist'>
+       
+    </ul>
+<script>
+    let s=""
+    for (name of names){
+        s+="<li>"+name+"</li>"
+        }
+ 
+    document.getElementById("mylist").innerHTML=s
+</script>
+
+<!--another way u can do create a child for a parent file and then print-->
+
+<h3>new array</h3>
+<button onclick="add()">+</button>
+<script>
+function add() {
+    let p=document.createElement("p")
+    p.innerText="This is a sample program"
+    p.id="p1"
+    document.getElementById("mydiv").appendChild(p)
+    
+}
+</script>
+<div id=mydiv>
+
+</div>
+<!--create a input field with a button and on button click display the field with a name-->
+<button onclick="uname()">Enter</button><br>
+
+<script>
+    function uname(){
+    let i=document.createElement("input")
+    i.value="JISMA"
+    document.getElementById("myname").appendChild(i)
+    }
+</script>
+<div id=myname></div>
+</body>
+</html>

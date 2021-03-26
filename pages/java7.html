@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data=["a","b","c","d","e"]
+        //for (i of data){
+           // console.log(i)   ****instead of this for loop u can use for each loop for iteration
+      //  }
+        data.forEach((i)=>{
+            console.log(i)
+                })
+
+                let num_ary=[10,11,23,22,1,9]
+                let new_ary=num_ary.map((x)=>{
+                    return x**2
+                })
+                console.log(new_ary)
+    let filter_ary=num_ary.filter((x)=>{
+        if (x%2==0){
+            return x
+        }
+    })
+     console.log(filter_ary)
+     </script>
+</body>
+</html>

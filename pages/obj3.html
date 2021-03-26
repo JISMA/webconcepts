@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function student(name,age,rollno)
+        {
+            this.Name=name
+            this.Age=age
+            this.Rollno=rollno
+            this.show=function(){
+                console.log(`Name ${this.Name}`)
+                console.log(`Age ${this.Age}`)
+                console.log(`Rollno ${this.Rollno}`)
+            }
+        }
+        let student1=new student("Amy",12,1)
+        let student2=new student("Anu",13,2)
+        console.log(student1)
+        console.log(student2)
+        student1.show()
+        student2.show()
+
+    </script>
+</body>
+</html>

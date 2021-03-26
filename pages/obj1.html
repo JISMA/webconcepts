@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //simple obj creation
+        let obj={}
+        console.log(obj)
+        //obj has two values
+        obj.x=100
+        obj.y=70
+        console.log(obj)
+        //use this function to call wat is in x and y
+        obj.display=function(){
+            console.log(this.x)
+            console.log(this.y)
+        }
+        console.log(obj)
+        obj.display()
+        // display multiple values
+        let person={name:"Raju",age:12,address:'NYC,H121',showdata:function(){
+            console.log(this.name)
+            console.log(this.age)
+            console.log(this.address)
+            
+        }}
+        person.showdata()
+
+        //create student obj
+        let studentobj={Name:"neha",Age:15,RollNo:2,Marks:[22,25,24],
+        average:function(){
+           let sum=0
+           this.Marks.forEach(element =>{
+               sum +=element
+           });
+           return sum/this.Marks.length
+        }}
+    studentobj.average()
+   
+    //create an employee details update salary
+
+    let emplobj={Name:"Meera",id:22,salary:28000,
+IncrSalry:function(amount){
+    
+    this.salary +=amount
+}
+}
+emplobj.IncrSalry(1000)
+console.log(emplobj.salary)
+    
+    </script>
+</body>
+</html>

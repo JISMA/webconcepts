@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Document</title>
+
+  <link rel="stylesheet" href="../bootstrap-5.0.0-beta2-dist/css/bootstrap-grid.css">
+  <link rel="stylesheet" href="../bootstrap-5.0.0-beta2-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../bootstrap-5.0.0-beta2-dist/css/bootstrap-grid.rtl.min.css">
+</head>
+
+<body>
+  <div class="row">
+    <script>
+      var data = new Array()
+      var newdata = new Array()
+
+      function add() {
+        data.push(document.getElementById('t1').value);
+        document.getElementById('t1').value = '';
+        disp();
+      }
+
+      function remove(no) {
+        var t1 = data.splice(no, 1);
+        disp();
+      }
+
+      function move(no) {
+        newdata.push(data[no]);
+        var t1 = data.splice(no, 1);
+        moved();
+        disp();
+      }
+
+      function disp() {
+        var str = '';
+        str = 'Data array length : ' + data.length + '<br>';
+        for (i = 0; i < data.length; i++) {
+          str += i + ':' + data[i] + " <button onClick='remove(" + data.indexOf(data[i]) + ")'> Remove</button> ";
+          str += " <button onClick='move(" + data.indexOf(data[i]) + ")'>move</button> " + "<br>";
+        }
+
+        document.getElementById('disp').innerHTML = str;
+      }
+
+      function moved() {
+        var str = '';
+        str = 'Number of moved elements in new array : ' + newdata.length + '<br>';
+        for (i = 0; i < newdata.length; i++) {
+          str += i + '  :  ' + newdata[i] + '<br>';
+
+        }
+        document.getElementById('moved').innerHTML = str;
+      }
+
+    </script>
+
+    <div class="col-sm-6">
+      <input type=text id='t1' placeholder="Enter ur list here"><br>
+      <br>
+      <input type=button value='Add' onClick='add()' ;>
+    </div>
+    <br>
+    <div class="col-sm-6">
+      <button type=button value='Disp' onClick="document.getElementById('disp').innerHTML=data" ;>Display</button>
+      <div id=disp></div>
+    </div>
+
+    <div class="col-sm-6" id='moved'> Moved elements </div>
+
+  </div>
+</body>
+
+</html>

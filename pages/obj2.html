@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person={name:"Ram",age:34}
+student=Object.create(person)
+console.log(student)
+//add or insert a new elemnet
+student.rollno=1
+console.log(student)
+    //object freeze once freezed we cannt do anything
+    //*********Object.freeze(student)
+    //*********student.rollno=2
+    //*********student.batchnum="cs"
+    //*********console.log(student)
+//check wheter it is freezd
+console.log(Object.isFrozen(student))
+Object.seal(student)
+student.rollno=2
+student.batchnum="EC"
+console.log(student)
+let student1=Object.assign(student)
+console.log(student1)
+//two obj compared not the values the adress location is compared each obj is unique
+let obj1={x:10,y:30}
+let obj2={x:10,y:30}
+obj1=obj2
+console.log()
+
+
+</script>
+</body>
+</html>

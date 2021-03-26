@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <textarea name="" id="content" cols="30" rows="10"></textarea>
+    <input id="username" type="text">
+    <button onclick="NewFunction()">Click</button>
+    <div id='result'></div>
+    <script>
+        
+       // let inp="python programing python coding"
+        //let data=prompt("Enter a word")
+        //let regexp=/python/g
+        //let reg=new RegExp(data,"g") //create a function constructor
+        //let result= inp.replace(reg,"java")
+        //alert(result)
+        function NewFunction(){
+
+           let inp= document.getElementById('username').value //input frm textbox
+           // console.log(inp)
+            let Reg=new RegExp(inp,"g")
+            console.log(Reg)
+            let text=document.getElementById('content').value //inpu frm textarea
+            console.log(text)
+            let newcontent=text.replace(Reg,"<span style='background-color:blue'>"+inp+"</span>")
+           // or use mark*** let resut=text.replace(Reg,"<mark>"+inp+"</mark>")
+            console.log(newcontent)
+            document.getElementById('result').innerHTML=newcontent
+
+
+        }
+    </script>
+</body>
+</html>

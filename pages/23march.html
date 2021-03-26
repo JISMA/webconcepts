@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: "Anna", age: 26, greetings: function (msg, date) {
+                console.log("Hello", this.name, "Welcome", msg, date)
+            }
+        }
+        let obj1 = { name: "Rani" }
+        obj.greetings.call(obj1, "Good Morning!!!!", new Date())//a function frm obj is called to obj1 it is borrowed
+        //apply can be used instead of call only diff is how arguments are passed we give in square brackets
+        obj.greetings.apply(obj1, ["what is the date", new Date()])
+        //bind function 
+        //it also borrows will not call directly ,it is partiall function application
+        //it returns a function and we can pass the arguments at a later time
+        let f = obj.greetings.bind(obj1, "New day")
+        console.log("user login")
+        console.log(f)
+        f(new Date())
+        //function curryain
+        //multiple argument function are split to single ones and executed
+        function first(x){
+            return function(y){
+                return function(z){
+                    return x*y*z
+                }
+
+            }
+        }
+        let f1= first(10)
+        let f2= f1(20)
+        f2(30)
+        
+        //or we can give in single stretch
+        first (4)(5)(6)
+        function greetings(gender,age,name){
+            var saluation=gender=="male"?"Mr.":"Ms"
+            if (age>25){
+                console.log("hello  " +saluation+ " " +name)
+                }
+                else{
+                    console.log("Hey  " +saluation+ " " +name)
+            }
+        }
+        //let greetAnAdultMale=greetings.bind(null,"male",32)
+       // greetAnAdultMale("Arun")
+       // greetAnAdultMale("Raj")
+        //let greetAnAdultMale=greetings.bind(null,"male",23)
+       // greetAnAdultMale("Nizer")
+        //female
+        let greetAnAdultMale=greetings.bind(null,"female",33)
+        greetAnAdultMale("Neenu")
+
+        //Array destructor
+        var names = ["Anna","Jony","Thomas","Sara"]
+        var [a,b,c,d]=names
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+//to expose all items in a array start with particular value
+        let result1= names.every((item)=>{
+            if(item.startsWith("A")){
+                return true
+            }
+        })
+        console.log(result1)
+        //check fr some item alone
+        let result2=names.some((item)=>{
+            if(item.startsWith("A")){
+                return true
+            }
+        })
+        console.log(result2)
+
+        //function closure
+        //function hoisting
+           </script>
+</body>
+
+</html>

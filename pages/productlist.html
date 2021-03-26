@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="col-sm-6">
+    
+        <label for="Product id">Product id:</label><br>
+         <input type="text" id="productid" name="prodid"><br>
+             <br>
+         <label for="name">Product name:</label><br>
+         <input type="text" id="name" name="name"><br>
+        <br>
+         <label for="price">Price :</label><br>
+         <input type="price" id="price" name="price">
+        <br>
+        <br>
+         <input type=button value='Add' onClick='Addlist()';>
+         <br>
+         <br>
+         <input type=button value='view' onClick="viewArry()";>
+         <div id="h"></div>
+    </div>
+
+    <script>
+    function ProductDetails(productId,productName,productprice){
+    this.productId=id
+    this.productName=name
+    this.productPrice=price
+    }
+
+    var productlist = new Array()
+    function Addlist(){
+                   id=document.getElementById('productid').value
+                   name=document.getElementById('name').value
+                    price=document.getElementById('price').value
+                    let obj=new ProductDetails(id,name,price)
+                    console.log(obj)
+                    productlist.push(obj)// push to an array
+                    console.log(productlist)
+                }  
+                 
+    function viewArry(){
+
+        var h = document.getElementById("h")
+       
+        for (i=0;i<productlist.length;i++){
+           h.innerHTML += "<p>product id :"+productlist[i].productId+"</p><br>";
+           h.innerHTML += "<p>product name :"+productlist[i].productName+"</p><br>";
+           h.innerHTML += "<p>product price :"+productlist[i].productPrice+"</p><br>";
+           h.innerHTML += "<p>--------------------------------------</p><br>";
+        }
+    }
+    </script>
+    
+</body>
+</html>

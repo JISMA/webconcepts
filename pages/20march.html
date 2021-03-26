@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">    </p>
+    <p id="p2"></p>
+    <script>
+document.getElementById('p1').innerHTML="\u00A9 Reserved for New Project"
+document.getElementById('p2').innerHTML="\u0024 Money Transfered in DOllar"
+//localStorage.setItem("fruit1","Avacado")
+//localStorage.setItem("fruit2","Apple")
+localStorage.setItem("fruit3","Anar")
+console.log(localStorage)
+localStorage.getItem("fruit2")
+
+//converting string to object and back
+let obj={name:"Sama",age:30}
+let s=JSON.stringify(obj)//object to string
+let obj1=JSON.parse(s)//string to obj
+console.log(obj1.name)//print the name
+console.log(obj1["name"])//same as above
+    </script>
+</body>
+</html>
